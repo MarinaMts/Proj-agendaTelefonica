@@ -1,0 +1,22 @@
+{
+  "name": "proj-agendatelefonica",
+  "version": "1.0.0",
+  "description": "Projeto prático de pw3, criação de uma agenda telefonica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinaMts/Proj-agendaTelefonica.git"
+  },
+  "author": "Marina Martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarinaMts/Proj-agendaTelefonica/issues"
+  },
+  "homepage": "https://github.com/MarinaMts/Proj-agendaTelefonica#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
