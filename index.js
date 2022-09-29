@@ -1,9 +1,12 @@
 const express = require('express');
+const categoriaController = require('./controller/CategoriaController');
+
 const app = express();
 
-app.get("/",(req,res) => {
-    console.log("Funciona")
-});
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+app.use('/', categoriaController);
 
 app.listen(8089, () =>{
     console.log("Rodando");
