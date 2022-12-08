@@ -45,6 +45,27 @@ router.get('/listarCategoria', (req, res)=>{
         );
 });
 
+router.get('/listarCategoria/:id',(req, res)=>{
+
+    let {id} = req.params;
+
+    modelCategoria.findByPk(id)
+        .then(
+            (categoria)=>{
+                res.status(200).json(categoria);
+            }
+        ).catch(
+            (erro)=>{
+                return res.status(400).json({
+                    erroStatus: true,
+                    erroMessagem: 'Houve um erro ao selecionar os dados de categoria',
+                    erroBancoDados: erro
+                });
+            }
+        );
+
+});
+
 router.put('/alterarCategoria', (req, res)=>{
     let {id, NOME_CATEGORIA} = req.body;
 

@@ -44,8 +44,29 @@ router.get('/listarContato', (req, res)=>{
         );
 });
 
+router.get('/listarContato/:id',(req, res)=>{
+
+    let {id} = req.params;
+
+    modelContato.findByPk(id)
+        .then(
+            (contato)=>{
+                res.status(200).json(contato);
+            }
+        ).catch(
+            (erro)=>{
+                return res.status(400).json({
+                    erroStatus: true,
+                    erroMessagem: 'Houve um erro ao selecionar os dados de contato',
+                    erroBancoDados: erro
+                });
+            }
+        );
+
+});
+
 router.put('/alterarContato', (req, res)=>{
-    let {id, NOME_CONTATO} = req.body;
+    let {id, NOME_CONTATO, TEL_CONTATO, APELIDO, EMAIL_CONTATO, ID_CATEGORIA_CONTATO} = req.body;
 
     modelContato.update(
         {NOME_CONTATO,TEL_CONTATO, APELIDO, EMAIL_CONTATO, ID_CATEGORIA_CONTATO},

@@ -32,7 +32,6 @@ Categoria.hasMany(Contato, {
 
 Contato.belongsTo(Categoria);
 
-
 //Contato.sync({force:true});
 
 module.exports = Contato;
